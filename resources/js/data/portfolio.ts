@@ -23,7 +23,7 @@ export const profile = {
     name: 'Hasan Abdo',
     role: 'Software developer',
     intro: 'Ik zit in de laatste fase van mijn mbo-opleiding Software Developer (niveau 4) en bouw fullstack webapplicaties met PHP, Laravel en MySQL, van eerste concept tot werkend product.',
-    email: 'you@example.com',
+    email: 'hm.abdo@student.alfa-college.nl',
     github: 'https://github.com/Hasazaro',
     availability: 'Open voor nieuwe kansen',
 };
