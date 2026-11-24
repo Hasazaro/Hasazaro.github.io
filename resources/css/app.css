@@ -1,0 +1,201 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    --font-serif: 'Fraunces', ui-serif, Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    --color-moss: var(--moss);
+    --color-leaf: var(--leaf);
+    --color-sun: var(--sun);
+    --color-rust: var(--rust);
+    --color-sky: var(--sky);
+
+    --animate-firefly: firefly 6s ease-in-out infinite;
+    --animate-sway: sway 7s ease-in-out infinite;
+
+    @keyframes firefly {
+        0%,
+        100% {
+            opacity: 0.15;
+            transform: translate(0, 0);
+        }
+        50% {
+            opacity: 1;
+            transform: translate(12px, -18px);
+        }
+    }
+
+    @keyframes sway {
+        0%,
+        100% {
+            transform: rotate(-2deg);
+        }
+        50% {
+            transform: rotate(2deg);
+        }
+    }
+}
+
+/*
+ * Palette inspired by an overgrown, sun-soaked world:
+ * parchment, moss, leaf, sunlight, rust and faded sky.
+ */
+:root {
+    --background: #f1ebdd;
+    --foreground: #1e241f;
+    --card: #f8f4ea;
+    --card-foreground: #1e241f;
+    --popover: #f8f4ea;
+    --popover-foreground: #1e241f;
+    --primary: #4a6233;
+    --primary-foreground: #f8f4ea;
+    --secondary: #e6ddc8;
+    --secondary-foreground: #1e241f;
+    --muted: #e6ddc8;
+    --muted-foreground: #5e6457;
+    --accent: #e9d9b0;
+    --accent-foreground: #1e241f;
+    --destructive: #a3502a;
+    --destructive-foreground: #a3502a;
+    --border: #d9cfb8;
+    --input: #d9cfb8;
+    --ring: #7d8f4e;
+    --chart-1: #4a6233;
+    --chart-2: #d99a2b;
+    --chart-3: #a3502a;
+    --chart-4: #6f9a97;
+    --chart-5: #7d8f4e;
+    --radius: 0.625rem;
+    --sidebar: #ebe4d3;
+    --sidebar-foreground: #1e241f;
+    --sidebar-primary: #4a6233;
+    --sidebar-primary-foreground: #f8f4ea;
+    --sidebar-accent: #e6ddc8;
+    --sidebar-accent-foreground: #1e241f;
+    --sidebar-border: #d9cfb8;
+    --sidebar-ring: #7d8f4e;
+
+    --moss: #4a6233;
+    --leaf: #7d8f4e;
+    --sun: #d99a2b;
+    --rust: #a3502a;
+    --sky: #6f9a97;
+}
+
+.dark {
+    --background: #121612;
+    --foreground: #e9e3d3;
+    --card: #1a201a;
+    --card-foreground: #e9e3d3;
+    --popover: #1a201a;
+    --popover-foreground: #e9e3d3;
+    --primary: #9db36f;
+    --primary-foreground: #121612;
+    --secondary: #232b22;
+    --secondary-foreground: #e9e3d3;
+    --muted: #232b22;
+    --muted-foreground: #a3a893;
+    --accent: #2e3626;
+    --accent-foreground: #e9e3d3;
+    --destructive: #cf7444;
+    --destructive-foreground: #cf7444;
+    --border: #2c352b;
+    --input: #2c352b;
+    --ring: #7d8f4e;
+    --chart-1: #9db36f;
+    --chart-2: #e8b04b;
+    --chart-3: #cf7444;
+    --chart-4: #86b0ac;
+    --chart-5: #7d8f4e;
+    --sidebar: #161b16;
+    --sidebar-foreground: #e9e3d3;
+    --sidebar-primary: #9db36f;
+    --sidebar-primary-foreground: #121612;
+    --sidebar-accent: #232b22;
+    --sidebar-accent-foreground: #e9e3d3;
+    --sidebar-border: #2c352b;
+    --sidebar-ring: #7d8f4e;
+
+    --moss: #9db36f;
+    --leaf: #6b7d42;
+    --sun: #e8b04b;
+    --rust: #cf7444;
+    --sky: #86b0ac;
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Subtle film grain laid over the whole page. */
+@utility grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
