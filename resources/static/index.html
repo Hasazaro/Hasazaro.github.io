@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Portfolio - Hasan Abdo</title>
+        <meta
+            name="description"
+            content="Portfolio van Hasan Abdo, software developer (mbo niveau 4) met PHP, Laravel, MySQL en React."
+        />
+
+        <script>
+            (() => {
+                let stored = null;
+                try {
+                    stored = localStorage.getItem('appearance');
+                } catch {}
+                const appearance = ['light', 'dark', 'system'].includes(stored)
+                    ? stored
+                    : 'system';
+                const dark =
+                    appearance === 'dark' ||
+                    (appearance === 'system' &&
+                        window.matchMedia('(prefers-color-scheme: dark)')
+                            .matches);
+
+                document.documentElement.classList.toggle('dark', dark);
+                document.documentElement.style.colorScheme = dark
+                    ? 'dark'
+                    : 'light';
+            })();
+        </script>
+
+        <style>
+            html {
+                background-color: #f1ebdd;
+            }
+
+            html.dark {
+                background-color: #121612;
+            }
+        </style>
+
+        <link rel="icon" href="../../public/favicon.ico" sizes="any" />
+        <link rel="icon" href="../../public/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="../../public/apple-touch-icon.png" />
+
+        <link rel="preconnect" href="https://fonts.bunny.net" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.bunny.net/css?family=fraunces:400,400i,600,600i,700|instrument-sans:400,500,600|jetbrains-mono:400,500&display=swap"
+        />
+    </head>
+    <body class="font-sans antialiased">
+        <div id="app"></div>
+        <script type="module" src="../js/static.tsx"></script>
+    </body>
+</html>
